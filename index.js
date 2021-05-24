@@ -5,6 +5,7 @@ const controller = require('./controllers')
 const multer = require('multer')
 const storage = multer.memoryStorage()
 var form = multer({dest: 'form/', storage: storage})
+const {v4: uuidV4} = require('uuid');
 const io =require('socket.io')(http, {
   cors: {
     origin: "http://localhost:3000",
@@ -12,15 +13,26 @@ const io =require('socket.io')(http, {
     credentials: true
   }
 });
+
 const cors = require('cors');
 app.use(cors());
 
 app.use('/addAudio', form.single('audio'), controller.s3);
 
 
+
+// app.get('/stream', (req, res)=>{
+//   res.render('index.ejs', {roomId: req.params.room})
+// })
+
 io.on('connection', (socket) => {
-  console.log('user connected')
-  socket.emit('connected?')
+  socket.on('join-room', (roomId, userId) => {
+    socket.join(roomId)
+    socket.to(roomId).emit('user-connected', userId)
+    socket.on('disconnect', ()=> {
+      socket.to(roomId).emit('user-disconnect', userId)
+    })
+  })
 })
 
 http.listen(4000, () => {
