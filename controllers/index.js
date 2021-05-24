@@ -1,0 +1,1 @@
+exports.s3 = require('./audioS3.js');
