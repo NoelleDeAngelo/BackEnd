@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const http = require('http').Server(app);
+const bodyParser = require('body-parser')
 const controller = require('./controllers')
 const multer = require('multer')
 const storage = multer.memoryStorage()
@@ -16,6 +17,8 @@ const io =require('socket.io')(http, {
 
 const cors = require('cors');
 app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/addAudio', form.single('audio'), controller.s3);
 

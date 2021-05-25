@@ -13,16 +13,16 @@ const s3 = new aws.S3()
 const S3_BUCKET = process.env.awsBucket_FEC;
 
 module.exports = (req, res) => {
-  console.log(req, 'Test')
-  // const fileName = req.file.originalname;
-  // const fileType = req.file.mimetype
+  console.log(req.file, 'Test')
+  const fileName = req.file.originalname;
+  const fileType = req.file.mimetype
   const test = 'test'
   const s3Params = {
     Bucket: S3_BUCKET,
-    Key: test,
+    Key: fileName,
     Expires: 10000,
-    Body: req.body.audio,
-    ContentType: 'video/webm',
+    Body: req.file.buffer,
+    ContentType: fileType,
     ACL: 'public-read'
   }
 
