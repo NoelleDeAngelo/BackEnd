@@ -13,15 +13,16 @@ const s3 = new aws.S3()
 const S3_BUCKET = process.env.awsBucket_FEC;
 
 module.exports = (req, res) => {
-  const fileName = req.file.originalname;
-  const fileType = req.file.mimetype
-
+  console.log(req, 'Test')
+  // const fileName = req.file.originalname;
+  // const fileType = req.file.mimetype
+  const test = 'test'
   const s3Params = {
     Bucket: S3_BUCKET,
-    Key: fileName,
+    Key: test,
     Expires: 10000,
-    Body: req.file.buffer,
-    ContentType: fileType,
+    Body: req.body.audio,
+    ContentType: 'video/webm',
     ACL: 'public-read'
   }
 
@@ -32,7 +33,7 @@ module.exports = (req, res) => {
       res.json({success: false, error: err})
     }
 
-    const qaImgUrl = `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
+    const qaImgUrl = `https://${S3_BUCKET}.s3.amazonaws.com/${test}`
     console.log(qaImgUrl)
     res.send(qaImgUrl)
   })
