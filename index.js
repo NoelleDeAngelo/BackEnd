@@ -9,7 +9,7 @@ var form = multer({dest: 'form/', storage: storage})
 const {v4: uuidV4} = require('uuid');
 const io =require('socket.io')(http, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "http://localhost:8100",
     methods: ["GET", "POST"],
     credentials: true
   }
