@@ -12,11 +12,11 @@ aws.config.update({
 const s3 = new aws.S3()
 const S3_BUCKET = process.env.awsBucket_FEC;
 
-module.exports = (req, res) => {
+module.exports = async (req, res) => {
   console.log(req.file, 'Test')
   const fileName = req.file.originalname;
   const fileType = req.file.mimetype
-  const test = 'test'
+  // const test = 'test'
   const s3Params = {
     Bucket: S3_BUCKET,
     Key: fileName,
@@ -26,15 +26,16 @@ module.exports = (req, res) => {
     ACL: 'public-read'
   }
 
-  s3.putObject(s3Params, (err, data) => {
-    if (err) {
-      console.log(err);
-      res.statusCode = 409;
-      res.json({success: false, error: err})
-    }
-
-    const qaImgUrl = `https://${S3_BUCKET}.s3.amazonaws.com/${test}`
+  try {
+    await s3.putObject(s3Params, (err, data) => {
+      if (err) {
+        console.log(err)
+      }
+    })
+    const qaImgUrl = `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
     console.log(qaImgUrl)
     res.send(qaImgUrl)
-  })
+  } catch (err) {
+    res.send(err)
+  }
 }
