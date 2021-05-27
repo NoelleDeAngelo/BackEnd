@@ -36,12 +36,15 @@ io.on('connection', (socket) => {
     socket.in(roomId).emit('user-connected', userId);
 
     socket.on('disconnect', ()=> {
-        socket.in(roomId).emit('user-disconnect', userId);
+      socket.in(roomId).emit('user-disconnect', userId);
       numClients[roomId]--;
       io.in(roomId).emit('number-users', numClients[roomId]);
-    })
+      })
     socket.on('rendered',  ()=>{
       io.in(roomId).emit('number-users', numClients[roomId]);
+    })
+    socket.on('sessionEnded',  ()=>{
+      io.in(roomId).emit('session-ended');
     })
   })
 })
