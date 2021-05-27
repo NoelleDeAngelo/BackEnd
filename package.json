@@ -1,0 +1,32 @@
+{
+  "name": "parley-backend",
+  "version": "1.0.0",
+  "description": "Back-end service for Parley, an audio communications platform",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/7SeasLLC/BackEnd.git"
+  },
+  "author": "7Seas LLC",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/7SeasLLC/BackEnd/issues"
+  },
+  "homepage": "https://github.com/7SeasLLC/BackEnd#readme",
+  "dependencies": {
+    "aws-sdk": "^2.912.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "multer": "^1.4.2",
+    "socket.io": "^4.1.2",
+    "socket.io-client": "^4.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
