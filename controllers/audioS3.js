@@ -3,14 +3,14 @@ const aws = require('aws-sdk')
 dotenv.config()
 
 aws.config.update({
-  'accessKeyId': process.env.accessKeyId_FEC,
-  'secretAccessKey': process.env.secretAccessKey_FEC,
-  'region': process.env.aws_region_FEC,
-  'bucketname': process.env.awsBucket_FEC
+  'accessKeyId': process.env.accessKeyId_parley,
+  'secretAccessKey': process.env.secretAccessKey_parley,
+  'region': process.env.aws_region_parley,
+  'bucketname': process.env.awsBucket_parley
 });
 
 const s3 = new aws.S3()
-const S3_BUCKET = process.env.awsBucket_FEC;
+const S3_BUCKET = process.env.awsBucket_parley;
 
 module.exports = async (req, res) => {
   console.log(req.file, 'Test')
