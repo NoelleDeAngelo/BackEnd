@@ -11,5 +11,11 @@ A back-end server for the Parley app that connects users through sockets and upl
 
 ## How To Use
 
--npm install -g peer
+``` sh 
+npm install -g peer
+```
 -npm install
+-start peer server
+
+
+
