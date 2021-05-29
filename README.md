@@ -20,8 +20,8 @@ npm install -g peer
 npm install
 ```
 * Create .env file
-**  Add S3 Credentials
-*** Access Key
+  * Add S3 Credentials
+    * Access Key
 
 
 ## Usage
