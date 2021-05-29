@@ -1,5 +1,5 @@
-# Parley Backend - A back-end server for the Parley app that connects users through sockets and uploads audio recordings to AWS S3
-Parley Service API
+# Parley Backend
+A back-end server for the Parley app that connects users through sockets and uploads audio recordings to AWS S3
 
 ## Tech Stack
 
