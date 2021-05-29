@@ -9,13 +9,22 @@ A back-end server for the Parley app that connects users through sockets and upl
 - [AWS S3](https://aws.amazon.com/s3/)
 - [Socket.io](https://socket.io/)
 
-## How To Use
+## Getting started
 
+* Install PeerJS globaly
 ``` sh 
 npm install -g peer
 ```
--npm install
--start peer server
+* Install npm packages
+``` sh 
+npm install
+```
+## Usage
+
+* Start peerJS server
+``` sh 
+peerjs --port 3001
+```
 
 
 
