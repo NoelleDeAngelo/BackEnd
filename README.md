@@ -32,7 +32,7 @@ npm install
 ``` sh 
 peerjs --port 3001
 ```
-* Strat express server
+* Start express server
  ``` sh 
 npm run server
 ```
