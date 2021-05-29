@@ -1,5 +1,5 @@
 # Parley Backend
-A back-end server for the Parley app that connects users through sockets and uploads audio recordings to AWS S3
+A back-end server for the Parley app that connects users through  Websockets and uploads audio recordings to AWS S3
 
 ## Tech Stack
 
@@ -22,14 +22,21 @@ npm install
 * Create .env file
   * Add S3 Credentials
     * Access Key
-
-
+    * Secret Access Key
+    * Region
+    * Bucket
+ 
 ## Usage
 
 * Start peerJS server
 ``` sh 
 peerjs --port 3001
 ```
+* Strat express server
+ ``` sh 
+npm run server
+```
+
 
 
 
