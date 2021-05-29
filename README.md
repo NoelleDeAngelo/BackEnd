@@ -21,10 +21,10 @@ npm install
 ```
 * Create .env file
   * Add S3 Credentials
-    * Access Key
-    * Secret Access Key
-    * Region
-    * Bucket
+    * ```accessKeyId_parley = 'YOUR ACCESS KEY' ```
+    * ```secretAccessKey_parley = 'YOUR SECRET ACCESS KEY'```
+    * ```aws_region_parley = 'YOUR REGION'```
+    * ```awsBucket_parley = 'YOUR BUCKET NAME'```
  
 ## Usage
 
