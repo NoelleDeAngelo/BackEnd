@@ -20,7 +20,7 @@ npm install -g peer
 npm install
 ```
 * Create .env file
-  * Add S3 Credentials
+  * Add your AWS S3 Credentials
     * ```accessKeyId_parley = 'YOUR ACCESS KEY' ```
     * ```secretAccessKey_parley = 'YOUR SECRET ACCESS KEY'```
     * ```aws_region_parley = 'YOUR REGION'```
